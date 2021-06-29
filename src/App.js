@@ -2,6 +2,7 @@
 import { Switch, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import Home from './pages/Home';
+import Country from './pages/Country';
 
 const theme = {
   mainColors: {
@@ -19,8 +20,7 @@ function App() {
         <Home/>
       </Route>
       <Route exact path="/:country">
-        here comes the country page
-        <country/>
+        <Country/>
       </Route>
       <Route>This is 404 page</Route>
     </Switch>

@@ -1,14 +1,25 @@
-import React from 'react'
-import { StyledCountryCard } from './Countrycard.styled'
+import React from 'react';
+import { StyledCountryCard } from './Countrycard.styled';
 
-const CountryCard = ({Country,TotalConfirmed,TotalDeath,TotalRecovered}) => {
-    return (
-        <StyledCountryCard>
-            <h1>{Country}</h1>
-            <p>TotalConfirmed: {TotalConfirmed}<br></br>TotalDeath: {TotalDeath}<br></br>TotalRecovered: {TotalRecovered} </p>
-            <br></br>
-        </StyledCountryCard>
-    )
-}
+const CountryCard = ({
+  Country,
+  TotalConfirmed,
+  TotalDeath,
+  TotalRecovered,
+}) => {
+  return (
+    <StyledCountryCard to={`/${Country}`}>
+      <div>
+        <h1>{Country}</h1>
+        <p>
+          TotalConfirmed: <span style={{color:'#b30000'}}>{TotalConfirmed}</span>
+          <br></br>TotalDeath: <span style={{color:'#333333'}}>{TotalDeath}</span>
+          <br></br>TotalRecovered: <span style={{color:'#006600'}}>{TotalRecovered}</span>{' '}
+        </p>
+        <br></br>
+      </div>
+    </StyledCountryCard>
+  );
+};
 
-export default CountryCard
+export default CountryCard;

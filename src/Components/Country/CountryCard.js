@@ -7,14 +7,17 @@ const CountryCard = ({
   TotalDeath,
   TotalRecovered,
 }) => {
+  var formatter = new Intl.NumberFormat('en-US', {
+    maximumSignificantDigits: 3
+  });
   return (
     <StyledCountryCard to={`/${Country}`}>
       <div>
         <h1>{Country}</h1>
         <p>
-          TotalConfirmed: <span style={{color:'#b30000'}}>{TotalConfirmed}</span>
-          <br></br>TotalDeath: <span style={{color:'#333333'}}>{TotalDeath}</span>
-          <br></br>TotalRecovered: <span style={{color:'#006600'}}>{TotalRecovered}</span>{' '}
+          Total Confirmed: <span style={{color:'#b30000'}}>{formatter.format(TotalConfirmed)}</span>
+          <br></br>Total Death: <span style={{color:'#333333'}}>{formatter.format(TotalDeath)}</span>
+          <br></br>Total Recovered: <span style={{color:'#006600'}}>{formatter.format(TotalRecovered)}</span>{' '}
         </p>
         <br></br>
       </div>

@@ -19,6 +19,14 @@ const renderResults = (data, country) => {
               confirmed={v.latest_data.confirmed}
               death={v.latest_data.deaths}
               recovered={v.latest_data.recovered}
+              td={v.today.deaths}
+              tc={v.today.confirmed}
+              updatedAt={v.updated_at}
+              population={v.population}
+              critical={v.latest_data.critical}
+              deathrate={v.latest_data.calculated.death_rate}
+              recoveryrate={v.latest_data.calculated.recovery_rate}
+              casespermillion={v.latest_data.calculated.cases_per_million_population}
             />
           </div>
         );

@@ -1,14 +1,28 @@
-import React from 'react'
-import { StyledCountryCard } from './Countrycard.styled'
+import React from 'react';
+import { StyledCountryCard } from './Countrycard.styled';
 
-const CountryCard = ({Country,TotalConfirmed,TotalDeath,TotalRecovered}) => {
-    return (
-        <StyledCountryCard>
-            <h1>{Country}</h1>
-            <p>TotalConfirmed: {TotalConfirmed}<br></br>TotalDeath: {TotalDeath}<br></br>TotalRecovered: {TotalRecovered} </p>
-            <br></br>
-        </StyledCountryCard>
-    )
-}
+const CountryCard = ({
+  Country,
+  TotalConfirmed,
+  TotalDeath,
+  TotalRecovered,
+}) => {
+  var formatter = new Intl.NumberFormat('en-US', {
+    maximumSignificantDigits: 3
+  });
+  return (
+    <StyledCountryCard to={`/${Country}`}>
+      <div>
+        <h1>{Country}</h1>
+        <p>
+          Total Confirmed: <span style={{color:'#b30000'}}>{formatter.format(TotalConfirmed)}</span>
+          <br></br>Total Death: <span style={{color:'#333333'}}>{formatter.format(TotalDeath)}</span>
+          <br></br>Total Recovered: <span style={{color:'#006600'}}>{formatter.format(TotalRecovered)}</span>{' '}
+        </p>
+        <br></br>
+      </div>
+    </StyledCountryCard>
+  );
+};
 
-export default CountryCard
+export default CountryCard;
